@@ -1,16 +1,18 @@
-const mon = "mon";
-const tue = "tue";
-const wed = "wed";
-const thu = "thu";
-const fri = "fri";
-const sat = "sat";
-const sun = "sund";
-
-// 참고 : 다중 커서는 Alt누른 상태로 클릭하면 가능
-
 //Array 생성
-const daysOfWeek = [mon, tue, wed, thu, fri, sat, sun];
+const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
 
-const nonsense = [1, 2, "hello", false, null, true, undefined, "Jamie"];
+// Get Item from Array
+console.log(daysOfWeek[4]);
 
-console.log(daysOfWeek, nonsense);
+console.log(daysOfWeek);
+
+// Add one more item to the array
+daysOfWeek.push("sun");
+
+console.log(daysOfWeek);
+
+const toBuy = ["potato", "tomato", "pizza"];
+toBuy.push("Kimbab");
+console.log(toBuy);
+console.log(toBuy[2]);
+console.log(toBuy[100]);    //undefined
