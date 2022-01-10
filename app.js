@@ -1,18 +1,34 @@
-//Array 생성
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
+// block 주석 단축키 : Shift + Alt + A
 
-// Get Item from Array
-console.log(daysOfWeek[4]);
+/*
 
-console.log(daysOfWeek);
+변수로?
+const playerName = "nico";
+const playerPoints = 100;
+const playerHandsome = true;
+const palyerFat = "little bit";
 
-// Add one more item to the array
-daysOfWeek.push("sun");
+배열로?
+const player = ["nico", 100, true, "little bit"];
 
-console.log(daysOfWeek);
+*/
 
-const toBuy = ["potato", "tomato", "pizza"];
-toBuy.push("Kimbab");
-console.log(toBuy);
-console.log(toBuy[2]);
-console.log(toBuy[100]);    //undefined
+
+// Object로!
+const player = {
+    name: "nico",
+    points: 100,
+    fat: true,
+};
+
+console.log(player);
+
+console.log(player.name);       //property 접근
+console.log(player["name"]);    //property 접근
+
+player.fat = false; //수정 가능 (object 자체를 수정하려하면 에러.)
+player.lastName = "potato"; //property 추가 가능
+player.points = player.points + 10;
+
+console.log(player);
+
