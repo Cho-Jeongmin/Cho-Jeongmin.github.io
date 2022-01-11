@@ -1,34 +1,32 @@
-// block 주석 단축키 : Shift + Alt + A
+//함수 작성
+function sayHello(nameOfPerson, age){
+    console.log("Hello my name is " + nameOfPerson + " and I am " + age);
+}
 
-/*
+sayHello("nico", 10);
+sayHello("dal", 23);
+sayHello("lynn", 21);
 
-변수로?
-const playerName = "nico";
-const playerPoints = 100;
-const playerHandsome = true;
-const palyerFat = "little bit";
+function plus(a, b){
+    console.log(a + b);
+}
 
-배열로?
-const player = ["nico", 100, true, "little bit"];
+plus(); //인자를 안넣으면NaN (Not a Number)라고 출력됨
+plus(60, 8);
 
-*/
+function divide(a, b){
+    console.log(a/b);
+}
 
+divide(98, 20);
 
-// Object로!
+//객체안에 함수 생성
 const player = {
     name: "nico",
-    points: 100,
-    fat: true,
+    sayHello: function(otherPersonsName){
+        console.log("hello " + otherPersonsName + " nice to meet you");
+    },
 };
 
-console.log(player);
-
-console.log(player.name);       //property 접근
-console.log(player["name"]);    //property 접근
-
-player.fat = false; //수정 가능 (object 자체를 수정하려하면 에러.)
-player.lastName = "potato"; //property 추가 가능
-player.points = player.points + 10;
-
-console.log(player);
-
+console.log(player.name);
+player.sayHello("Lynn");
