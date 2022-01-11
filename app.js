@@ -1,32 +1,27 @@
-//함수 작성
-function sayHello(nameOfPerson, age){
-    console.log("Hello my name is " + nameOfPerson + " and I am " + age);
-}
+const calculator = {
+    add: function(a, b){
+        console.log(a + b);
+    },
 
-sayHello("nico", 10);
-sayHello("dal", 23);
-sayHello("lynn", 21);
+    sub: function(a, b){
+        console.log(a - b);
+    },
 
-function plus(a, b){
-    console.log(a + b);
-}
+    multi: function(a, b){
+        console.log(a * b);
+    },
 
-plus(); //인자를 안넣으면NaN (Not a Number)라고 출력됨
-plus(60, 8);
+    divide: function(a, b){
+        console.log(a/b);
+    },
 
-function divide(a, b){
-    console.log(a/b);
-}
-
-divide(98, 20);
-
-//객체안에 함수 생성
-const player = {
-    name: "nico",
-    sayHello: function(otherPersonsName){
-        console.log("hello " + otherPersonsName + " nice to meet you");
+    powerOf: function(a, b){
+        console.log(a**b);
     },
 };
 
-console.log(player.name);
-player.sayHello("Lynn");
+calculator.add(2, 3);
+calculator.sub(27, 5);
+calculator.multi(5, 6);
+calculator.divide(40, 8);
+calculator.powerOf(2, 4);
