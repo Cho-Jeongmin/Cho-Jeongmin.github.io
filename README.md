@@ -1,1 +1,1 @@
-# JS-study
+# NomadCoders JS Study
