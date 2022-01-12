@@ -1,27 +1,19 @@
-const calculator = {
-    add: function(a, b){
-        console.log(a + b);
-    },
+const title = document.querySelector(".hello:first-child h1");
 
-    sub: function(a, b){
-        console.log(a - b);
-    },
+console.dir(title);
 
-    multi: function(a, b){
-        console.log(a * b);
-    },
+function handleTitleClick(){
+    title.style.color = "skyblue";
+}
 
-    divide: function(a, b){
-        console.log(a/b);
-    },
+function handleMouseEnter(){
+    title.innerText = "Mouse is here!";
+}
 
-    powerOf: function(a, b){
-        console.log(a**b);
-    },
-};
+function handleMouseLeave(){
+    title.innerText = "Mouse is gone!";
+}
 
-calculator.add(2, 3);
-calculator.sub(27, 5);
-calculator.multi(5, 6);
-calculator.divide(40, 8);
-calculator.powerOf(2, 4);
+title.addEventListener("click", handleTitleClick);
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
