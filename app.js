@@ -9,10 +9,11 @@ function onLoginSubmit(event) { //제출 함수
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
     localStorage.setItem(USERNAME_KEY, username);
-    paintGreetings(username);
+    paintGreetings();
 }
 
-function paintGreetings(username) { //인삿말
+function paintGreetings() { //인삿말
+    const username = localStorage.getItem(USERNAME_KEY);//argument없애고 직접 찾기
     greeting.innerText = `Hello ${username}!`;  //innerText를 추가하고
     greeting.classList.remove(HIDDEN_CLASSNAME);//greeting을 보이게하기
 }
@@ -23,5 +24,5 @@ if(savedUsername === null){ //이미 저장된 유저명이 없으면
     loginForm.classList.remove(HIDDEN_CLASSNAME);   //폼을 보이게하고
     loginForm.addEventListener("submit", onLoginSubmit);    //제출 진행
 } else {    //이미 저장된 유저명이 있으면
-    paintGreetings(savedUsername);  //인삿말
+    paintGreetings();  //인삿말
 }
