@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 let toDos = [];
 const TODOS_KEY = "todos";
 
-function saveToDos() {
+function saveToDos() {//toDos를 localStorage에 문자열 형태로 복제
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
@@ -13,10 +13,11 @@ function deleteToDo(event) {
     li.remove();
 }
 
-function paintToDo(newTodo) {
+function paintToDo(newTodoObj) {
     const li = document.createElement("li");
+    li.id = newTodoObj.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodoObj.text;
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteToDo);
@@ -29,8 +30,12 @@ function handleToDoSubmit(event) {
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = ""
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now(),
+    }        
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
