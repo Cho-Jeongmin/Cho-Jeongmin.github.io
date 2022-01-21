@@ -4,12 +4,14 @@ const toDoList = document.getElementById("todo-list");
 let toDos = [];
 const TODOS_KEY = "todos";
 
-function saveToDos() {//toDos를 localStorage에 문자열 형태로 복제
+function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(event) {
     const li = event.target.parentElement;
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    saveToDos();
     li.remove();
 }
 
