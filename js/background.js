@@ -6,6 +6,9 @@ const chosenImage = images[Math.floor(Math.random() * images.length)];
 const bgImage = document.createElement("img");
 
 bgImage.src = `img/${chosenImage}`;
-bgImage.width = 800;
+bgImage.style.width = "100%"
+bgImage.style.height = "100%";
+bgImage.style.position = "absolute";
+bgImage.style.zIndex = "1";
 
 document.body.appendChild(bgImage);

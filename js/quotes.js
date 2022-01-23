@@ -23,7 +23,7 @@ const quotes = [
     {
         quote: "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
         author: "James Cameron",
-    },,
+    },
     {
         quote: "Life is what happens when you're busy making other plans.",
         author: "John Lennon",
@@ -48,4 +48,4 @@ const author = document.querySelector("#quote span:last-child");
 const todaysQuote = Math.floor(Math.random()*quotes.length);//0이상 length미만의 랜덤 넘버
 
 quote.innerText = quotes[todaysQuote].quote;
-author.innerText = quotes[todaysQuote].author;
+author.innerText = `-${quotes[todaysQuote].author}-`;
